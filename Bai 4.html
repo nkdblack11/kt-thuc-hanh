@@ -17,7 +17,7 @@
             this.radius = radius
         }
 
-        this.getArea = function () {
+        this.render = function () {
             let c = document.getElementById('myCanvas');
             let ctx = c.getContext('2d');
             ctx.beginPath();
@@ -28,7 +28,7 @@
     };
 
     let c1 = new Circle(10, 10, 20, '#000000');
-    c1.getArea();
+    c1.render();
 
 </script>
 </body>
