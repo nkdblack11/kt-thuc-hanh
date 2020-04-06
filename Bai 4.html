@@ -13,6 +13,10 @@
         this.y = y;
 
         this.getRadius = function () {
+            this.radius = radius
+        }
+
+        this.getArea = function () {
             return Math.PI * radius * radius;
         };
 
@@ -20,8 +24,9 @@
 
     let c = document.getElementById('myCanvas');
     let ctx = c.getContext('2d');
+    let c = new Circle(10, 10, 10);
     ctx.beginPath();
-    ctx.arc(10, 10, 10, 0, 2*Math.PI);
+    ctx.arc(c, c.x, c.y, c.radius);
     ctx.stroke();
 </script>
 </body>
