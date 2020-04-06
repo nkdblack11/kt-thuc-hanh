@@ -7,27 +7,29 @@
 <body>
 <canvas id="myCanvas" width="500" height="500" style="border:1px solid blue"></canvas>
 <script>
-    let Circle = function (x, y, radius) {
+    let Circle = function (x, y, radius, color) {
         this.radius = radius;
         this.x = x;
         this.y = y;
+        this.color = color;
 
         this.getRadius = function () {
             this.radius = radius
         }
 
         this.getArea = function () {
-            return Math.PI * radius * radius;
-        };
-
+            let c = document.getElementById('myCanvas');
+            let ctx = c.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.stroke();
+        }
     };
 
-    let c = document.getElementById('myCanvas');
-    let ctx = c.getContext('2d');
-    let c1 = new Circle(10, 10, 10);
-    ctx.beginPath();
-    ctx.arc(c1, c1.x, c1.y, c1.radius);
-    ctx.stroke();
+    let c1 = new Circle(10, 10, 20, '#000000');
+    c1.getArea();
+
 </script>
 </body>
 </html>
